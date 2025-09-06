@@ -54,7 +54,7 @@ function playGame(playerMove) {
     .innerHTML = result;
 
   document.querySelector('.js-moves')
-    .innerHTML = `Ты выбрал <img src="img/${playerMove}-emoji.png" class="img-move" alt="" >Компьютер выбрал <img src="img/${computerMove}-emoji.png" class="img-move" alt="" >`  
+    .innerHTML = `Ты выбрал <img src="${playerMove}-emoji.png" class="img-move" alt="" >Компьютер выбрал <img src="${computerMove}-emoji.png" class="img-move" alt="" >`  
 }
 
 let isAutoPlaying = false;
@@ -90,4 +90,5 @@ function pickComputerMove (){
   }
 
   return computerMove;
+
 }
