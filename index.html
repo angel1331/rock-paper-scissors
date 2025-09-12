@@ -3,48 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/rock-paper-scissors.css">
   <title>Камень Ножницы Бумага</title>
 </head>
 <body>
-  <div class="title">
-    <p>Камень Ножницы Бумага</p>
-  </div>
-  <div class="buttons">
-    <button class="move-buttons js-rock-button"><img src="img\Камень-emoji.png" class="img-move" alt="" ></button>
-
-    <button class="move-buttons js-scissors-button"><img src="img\Ножницы-emoji.png" class="img-move" alt="" ></button>
-
-    <button class="move-buttons js-paper-button"><img src="img\Бумага-emoji.png" class="img-move" alt="" ></button>
-  </div>
-  
-  <div class="instructions">
-    <p>Горячие клавиши / Hot Keys</p>
-    <p>Q или Й = Камень</p>
-    <p>W или Ц = Ножницы</p>
-    <p>E или У = Бумага</p>
-  </div>
-  
-  <p class="js-moves"></p>
-  <p class="js-result"></p>
-  <p class="js-score"></p>
-
-  <div class="buttons">
-    <button class="score" onclick="
-      score.Wins = 0;
-      score.Losses = 0;
-      score.Ties = 0;
-      localStorage.setItem('score', JSON.stringify(score));
-      updateScoreElement()">Сбросить счетчик
-    </button>
-
-    <button onclick="
-      autoPlay();
-    " class="auto-play-button">
-      Авто игра
+  <div class="theme">
+    <button class="theme-button">
+      <img src="img/dark-theme.png" class="theme-img" alt="">
     </button>
   </div>
-<script src="script.js"></script>
+  <div class="main">
+      <p class="title">Камень Ножницы Бумага</p>
+  
+    <div class="buttons">
+      <button class="move-buttons js-rock-button"><img src="img\Камень-emoji.png" class="img-move" alt="" ></button>
+  
+      <button class="move-buttons js-scissors-button"><img src="img\Ножницы-emoji.png" class="img-move" alt="" ></button>
+  
+      <button class="move-buttons js-paper-button"><img src="img\Бумага-emoji.png" class="img-move" alt="" ></button>
+    </div>
+    
+    <p class="instructions1 instructions">Горячие клавиши / Hot Keys:</p>
+    <p class="instructions2 instructions">Q или Й = Камень</p>
+    <p class="instructions3 instructions">W или Ц = Ножницы</p>
+    <p class="instructions4 instructions">E или У = Бумага</p>
+    
+    <p class="js-moves"></p>
+    <p class="js-result"></p>
+    <p class="js-score"></p>
+    <p class="js-rank"></p>
+    <p class="js-next-rank"></p>
+  
+    <div class="buttons">
+      <button class="score" onclick="
+        score.Wins = 0;
+        score.Losses = 0;
+        score.Ties = 0;
+        rank.MMR = 0;
+        nextRank = 0;
+        localStorage.setItem('score', JSON.stringify(score));
+        updateScoreElement()
+        updateRankElement()">Сбросить счетчик
+      </button>
+  
+      <button onclick="
+        autoPlay();
+      " class="auto-play-button">
+        Авто игра
+      </button>
+    </div>
+    
+    <div class="info">
+      <p>
+        Список званий: Fucking Slave, Fisting is 300 Bucks, Ass We Can, Fuck You Leather Man, You Like That, Huh?, You Got Me Mad Now, Six Hot Loads, Thanks Sir, Lord of the Lockerroom, Dungeon Master.
+      </p>
+  
+      <p>
+        «Камень, ножницы, бумага» — популярная игра на руках, часто использующаяся как способ жеребьёвки для определения очерёдности хода или ведущего в других играх. 
+      </p>
+      <p>
+        Игроки считают вместе вслух «Камень… Ножницы… Бумага… Раз… Два… Три», одновременно качая кулаками. На счёт «Три» они одновременно показывают при помощи руки один из трёх знаков: камень, ножницы или бумагу. 
+      </p>
+      <p>
+        Победитель определяется по следующим правилам:
+  
+        Бумага побеждает камень («бумага обёртывает камень»).
+        Камень побеждает ножницы («камень затупляет ножницы»).
+        Ножницы побеждают бумагу («ножницы разрезают бумагу»).
+  
+        Если игроки показали одинаковый знак, то засчитывается ничья и игра переигрывается. 
+      </p>
+    </div>
+  </div>
+<script src="scripts/rock-paper-scissors.js"></script>
 </body>
-
 </html>

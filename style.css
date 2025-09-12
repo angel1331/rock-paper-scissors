@@ -1,22 +1,38 @@
 body {
-  background-color: rgb(25, 25, 25);
-  font-family: Arial, Helvetica, sans-serif;
-}
-  
-p {
-  color: white;
+  font-family: Arial, Helvetica, sans-serif;  
 }
 
+.background-color-dark {
+  background-color: rgb(25, 25, 25);
+}
+
+
 .title {
-  color: white;
+  display: flex;
+  justify-content: center;
   font-weight: bold;
   font-size: 35px;
+}
+
+.theme {
+  display: flex;
+  justify-content: right;
+}
+
+.theme-button {
+  background-color: transparent;
+  border: 0;
+}
+
+.theme-img {
+  height: 32px;
 }
 
 .move-buttons {
   height: auto;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid;
+  border-color: black;
   border-radius: 100%;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -29,6 +45,21 @@ p {
 
 .buttons {
   display: flex;
+  justify-content: center;
+}
+
+.instructions {
+  display: flex;
+  justify-content: center;
+}
+
+.js-score,
+.js-result,
+.js-moves,
+.js-rank,
+.js-next-rank {
+  display: flex;
+  justify-content: center;
 }
 
 .score,
@@ -37,11 +68,26 @@ p {
   background-color: red;
   border: 0;
   color: white;
-  height: 40px;
-  width: 200px;
+  padding: 15px 35px 15px 35px;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 30px;
+  margin: 10px;
+}
+
+.score:hover {
+  opacity: 70%;
+}
+
+.score:active {
+  opacity: 50%;
+}
+
+.auto-play-button:hover {
+  opacity: 70%;
+}
+
+.auto-play-button:active {
+  opacity: 50%;
 }
 
 .score:active {
@@ -54,6 +100,9 @@ p {
   margin-bottom: 0;
 }
 
+.info {
+  margin-top: 100px;
+}
 @media (max-width: 500px) {
   .title {
     font-size: 27px;
@@ -63,10 +112,15 @@ p {
 
   .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin: 5px;
   }
 
   .img-move {
     padding: 25px;
+  }
+  
+  .move-buttons {
+    margin: 5px;
   }
 }
